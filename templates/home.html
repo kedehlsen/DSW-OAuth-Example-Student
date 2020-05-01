@@ -11,11 +11,11 @@
       {% for category, message in messages %}
 
         {% if category == "message" %}
-          {% set cls = "myMessageCSSClasses" %}
+          {% set cls = "alert alert-success alert-dismissable" %}
 
         {% elif category == "error" %}
 
-          {% set cls = "myErrorCSSClasses" %}
+          {% set cls = "alert alert-danger alert-dismissable" %}
         {% endif %}
 
 
