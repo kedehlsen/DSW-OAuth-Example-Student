@@ -1,28 +1,29 @@
-{% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    {% for category, message in messages %}
-
-      {% if category == "message" %}
-        {% set cls = "myMessageCSSClasses" %}
-
-      {% if category == "error" %}
-
-        {% set cls = "myErrorCSSClasses" %}
-      {% endif %}
-
-
-      <div class= "{{ cls }}">{{ message }}</div>
-    {% endfor %}
-  {% endif %}
-{% endwith %}
-
-
 
 {% extends "layout.html" %}	
 
 {% block title %}Home{% endblock %}	
 
 {% block content %}	
+
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+
+        {% if category == "message" %}
+          {% set cls = "myMessageCSSClasses" %}
+
+        {% if category == "error" %}
+
+          {% set cls = "myErrorCSSClasses" %}
+        {% endif %}
+
+
+        <div class= "{{ cls }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
   <h1>Home</h1>	
   <ul>	
     <li><a href="/page1">That thing we do</a></li>	
