@@ -66,7 +66,7 @@ def authorized():
             session.clear()
             print(inst)
             flash('Unable to login. Please try again.')
-    return render_template('message.html')
+    return render_template('home.html')
 
 
 @app.route('/page1')
